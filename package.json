@@ -42,7 +42,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --quiet"
+      "eslint --quiet",
+      "git add"
     ]
   },
   "prettier": {
