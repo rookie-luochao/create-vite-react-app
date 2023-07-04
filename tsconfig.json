@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@request": ["./core/http/request.ts"]
+    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -19,7 +22,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+
+    /* Module Resolution Options */
+    // "baseUrl": ".",
   },
-  "include": ["src"],
+  // "include": ["src"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
