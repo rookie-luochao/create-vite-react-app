@@ -1,21 +1,39 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./app.css";
-import { ListUser } from "../src-clients/api/user";
+import { HelloGet } from "../src-clients/api/hello";
+import { DatePicker, DatePickerProps, Spin } from "antd";
+import { useRequest } from "ahooks";
 
 export const App = () => {
   const [count, setCount] = useState(0);
 
-  async function getApi() {
-    const res = await ListUser({});
-    console.log(res.data);
-  }
+  const { run, refresh, data, loading } = useRequest(HelloGet, {
+    manual: true,
+  });
+
+  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+  };
 
   return (
     <div className="App">
       <div>
-        <a onClick={getApi}>调用接口</a>
+        <a
+          onClick={() => {
+            run({ name: "zhangsan" });
+          }}
+        >
+          调用接口
+        </a>
+        <a onClick={refresh} style={{ marginLeft: 6 }}>
+          重刷接口
+        </a>
       </div>
+      <Spin spinning={loading}>
+        <div>接口数据：{data?.data}</div>
+      </Spin>
+      <DatePicker onChange={onChange} />
       <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src="../assets/images/vite.svg" className="logo" alt="Vite logo" />

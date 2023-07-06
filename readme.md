@@ -1,3 +1,18 @@
 ### 说明
 
-学习使用vite + pnpm + ts + react搭建一个web应用
+学习搭建一个web应用开发脚手架，使用的核心技术如下：
+vite
+pnpm
+typescript
+react
+antd
+openapi
+axios
+ahooks
+emotion
+react-router
+babel
+eslint
+prettier
+husky
+commitlint

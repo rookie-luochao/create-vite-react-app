@@ -12,10 +12,11 @@
     "openapi": "ts-node './core/openapi/index.mjs'"
   },
   "dependencies": {
+    "ahooks": "^3.7.8",
+    "antd": "^5.6.4",
     "axios": "^1.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "umi-request": "^1.4.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
