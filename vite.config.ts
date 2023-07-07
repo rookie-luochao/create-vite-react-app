@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        presets: [],
-        plugins: [],
-        babelrc: true,
+        presets: [["@babel/preset-react", { runtime: "automatic", importSource: "@emotion/react" }]],
+        plugins: ["@emotion/babel-plugin"],
+        babelrc: false,
         configFile: false,
       },
     }),

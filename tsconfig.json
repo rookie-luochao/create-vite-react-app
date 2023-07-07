@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["@emotion/react/types/css-prop"],
     "paths": {
       "@request": ["./core/http/request.ts"]
     },
@@ -21,10 +22,13 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
 
     /* Module Resolution Options */
     // "baseUrl": ".",
+
+    /* Source Map Options */
+    "sourceMap": false
   },
   // "include": ["src"],
   "exclude": ["node_modules"],

@@ -12,6 +12,7 @@
     "openapi": "ts-node './core/openapi/index.mjs'"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "ahooks": "^3.7.8",
     "antd": "^5.6.4",
     "axios": "^1.4.0",
