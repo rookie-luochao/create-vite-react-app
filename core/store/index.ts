@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { StorageValue, devtools, persist } from "zustand/middleware";
 import { logger } from "./loggerMiddleware";
 
 interface ILoginInfo {
-  token: string;
+  accessToken: string;
   refreshToken?: string;
   uid?: string;
   expireAt?: string;
@@ -27,6 +27,10 @@ interface IProjectState {
   clear: () => void;
 }
 
+export const loginInfoStorageKey = "login-storage";
+export const defaultLoginInfoStorage = { state: { loginInfo: null }, version: 0 };
+export type ILoginInfoStorageState = StorageValue<Pick<ILoginInfoState, "loginInfo">>;
+
 export const useLoginStore = create<ILoginInfoState>()(
   logger(
     devtools(
@@ -37,12 +41,14 @@ export const useLoginStore = create<ILoginInfoState>()(
           clear: () => set(() => ({ loginInfo: null })),
         }),
         {
-          name: "login-storage",
+          name: loginInfoStorageKey,
         },
       ),
     ),
   ),
 );
+
+const projectInfoStorageKey = "project-storage";
 
 export const useProjectStore = create<IProjectState>()(
   logger(
@@ -54,7 +60,7 @@ export const useProjectStore = create<IProjectState>()(
           clear: () => set(() => ({ projectInfo: null })),
         }),
         {
-          name: "project-storage",
+          name: projectInfoStorageKey,
         },
       ),
     ),

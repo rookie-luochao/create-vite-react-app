@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import { ILoginInfoStorageState, defaultLoginInfoStorage, loginInfoStorageKey } from "../store";
 
 // 实际情况从环境变量中读取
 const BASE_URL = "https://srv-gin-demo-server---devops.devops-jiahuayun-dev.rockontrol.com";
@@ -22,8 +23,15 @@ instance.interceptors.response.use((response) => {
 });
 
 instance.interceptors.request.use((config) => {
-  // get access token from local storage and set to config.header.Authorization
-  // config.headers.Authorization = localStorage.getItem('accessToken');
+  const loginInfoStorageStr = globalThis.localStorage.getItem(loginInfoStorageKey);
+  const loginInfoStorage = loginInfoStorageStr
+    ? (JSON.parse(loginInfoStorageStr) as ILoginInfoStorageState)
+    : defaultLoginInfoStorage;
+
+  if (loginInfoStorage.state.loginInfo) {
+    config.headers.Authorization = loginInfoStorage.state.loginInfo.accessToken;
+  }
+
   return config;
 });
 

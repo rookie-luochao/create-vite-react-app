@@ -10,9 +10,9 @@ export function Login() {
       <div>
         <Link to="/main/module1">goto module1</Link>
       </div>
-      token: {loginInfo?.token}
+      token: {loginInfo?.accessToken}
       <div>
-        {loginInfo && loginInfo?.token ? (
+        {loginInfo ? (
           <a onClick={clear}>注销登录</a>
         ) : (
           <a
@@ -23,7 +23,7 @@ export function Login() {
               fontSize: 24,
             }}
             onClick={() => {
-              updateLoginInfo({ token: "123" });
+              updateLoginInfo({ accessToken: "123" });
             }}
           >
             登录
