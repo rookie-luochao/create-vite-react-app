@@ -2,7 +2,7 @@
   "compilerOptions": {
     "types": ["@emotion/react/types/css-prop"],
     "paths": {
-      "@request": ["./core/http/request.ts"]
+      "@request": ["./src/core/http/request.ts"]
     },
     "target": "ES2020",
     "useDefineForClassFields": true,

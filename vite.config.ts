@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@request": "./core/http/request.ts",
+      "@request": "../core/http/request.ts",
     },
   },
 });

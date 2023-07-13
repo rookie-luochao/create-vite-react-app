@@ -9,7 +9,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint src --ext ts,tsx --fix",
     "prepare": "husky install",
-    "openapi": "ts-node './core/openapi/index.mjs'"
+    "openapi": "ts-node './src/core/openapi/index.mjs'"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

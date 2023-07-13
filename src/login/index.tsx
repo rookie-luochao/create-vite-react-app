@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLoginStore } from "../../core/store";
+import { useLoginStore } from "../core/store";
 
 export function Login() {
   const { loginInfo, updateLoginInfo, clear } = useLoginStore((state) => state);

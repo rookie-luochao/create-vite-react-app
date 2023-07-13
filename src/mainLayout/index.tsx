@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DatePicker, DatePickerProps, Spin } from "antd";
 import { useRequest } from "ahooks";
 import { Outlet } from "react-router-dom";
-import { HelloGet } from "../../src-clients/api/hello";
+import { HelloGet } from "../api/hello";
 import "./index.css";
 
 export const MainLayout = () => {
