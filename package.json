@@ -50,17 +50,17 @@
         2,
         "always",
         [
+          "build",
+          "chore",
+          "ci",
+          "docs",
           "feat",
           "fix",
-          "doc",
-          "style",
-          "refactor",
-          "test",
-          "revert",
-          "build",
-          "ci",
           "perf",
-          "conf"
+          "refactor",
+          "revert",
+          "style",
+          "test"
         ]
       ]
     }
