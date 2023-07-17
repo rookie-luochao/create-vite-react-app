@@ -1,8 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { ILoginInfoStorageState, defaultLoginInfoStorage, loginInfoStorageKey } from "../store";
+import { getConfig } from "./config";
 
-// 实际情况从环境变量中读取
-const BASE_URL = "https://srv-gin-demo-server---devops.devops-jiahuayun-dev.rockontrol.com";
+// console.log('config:', getConfig())
+const BASE_URL = getConfig().baseURL;
 
 const instance = axios.create({
   baseURL: BASE_URL,
