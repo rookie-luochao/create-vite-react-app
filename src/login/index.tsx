@@ -19,6 +19,7 @@ export function Login() {
   return (
     <div>
       <h3 css={{ fontSize: 24 }}>this is login page</h3>
+      <div>测试husky</div>
       <div>
         <Link to="/main/module1">goto module1</Link>
       </div>
