@@ -6,19 +6,20 @@ pnpm dev<br>
 如果git commit无法触发husky，则需要手动执行一遍pnpm prepare
 
 学习搭建一个web应用开发脚手架，最大限度使用社区优秀开源方案(ps: 因为有文档, 有维护者解决pr和issue!!!)，核心技术如下：<br>
-vite<br>
-pnpm<br>
-typescript<br>
-react<br>
-react-router<br>
-antd<br>
-emotion<br>
-zustand<br>
-openapi<br>
-axios<br>
-ahooks<br>
-babel<br>
-eslint<br>
-prettier<br>
-husky<br>
-commitlint<br>
+[vite](https://github.com/vitejs/vite)<br>
+[pnpm](https://github.com/pnpm/pnpm)<br>
+[typescript](https://github.com/microsoft/TypeScript)<br>
+[react](https://github.com/facebook/react)<br>
+[react-router](https://github.com/remix-run/react-router)<br>
+[antd](https://github.com/ant-design/ant-design)<br>
+[emotion](https://github.com/emotion-js/emotion)<br>
+[zustand](https://github.com/pmndrs/zustand)<br>
+[openapi](https://github.com/chenshuai2144/openapi2typescript)<br>
+[axios](https://github.com/axios/axios)<br>
+[ahooks](https://github.com/alibaba/hooks)<br>
+[babel](https://github.com/babel/babel)<br>
+[eslint](https://github.com/eslint/eslint)<br>
+[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)<br>
+[prettier](https://github.com/prettier/prettier)<br>
+[husky](https://github.com/typicode/husky)<br>
+[commitlint](https://github.com/conventional-changelog/commitlint)<br>
