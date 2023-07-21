@@ -1,4 +1,4 @@
-import { MainLayout } from ".";
+import MainLayout from "./index";
 import { pagesRoutes } from "../pages/routes";
 
 export const mainRoutes = {

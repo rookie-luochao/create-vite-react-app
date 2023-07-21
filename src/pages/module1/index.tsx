@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function Module1() {
+export default function Module1() {
   return (
     <div>
       this is module1

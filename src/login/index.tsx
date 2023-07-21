@@ -1,14 +1,14 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLoginStore } from "../core/store";
 import { ParsedUrlQuery, useQuery } from "../core/router/UseQuery";
-import { useEffect } from "react";
 
 interface IQuery extends ParsedUrlQuery {
   a: string | string[];
   b: string;
 }
 
-export function Login() {
+export default function Login() {
   const { loginInfo, updateLoginInfo, clear } = useLoginStore((state) => state);
   const [query, setQuery] = useQuery<IQuery>();
 

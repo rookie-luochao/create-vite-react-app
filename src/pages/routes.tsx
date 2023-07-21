@@ -1,6 +1,8 @@
-import { Module1 } from "./module1";
-import { Module2 } from "./module2";
-import { Module3 } from "./module3";
+import { lazy } from "react";
+
+const Module1 = lazy(() => import("./module1"));
+const Module2 = lazy(() => import("./module2"));
+const Module3 = lazy(() => import("./module3"));
 
 export const pagesRoutes = [
   {

@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 
-export function Module3() {
+export default function Module3() {
   const [searchParams] = useSearchParams();
 
   return (

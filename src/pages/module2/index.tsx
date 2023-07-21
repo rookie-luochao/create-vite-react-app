@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-export function Module2() {
+export default function Module2() {
   const params = useParams();
 
   return (

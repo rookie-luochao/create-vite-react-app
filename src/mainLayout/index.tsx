@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import { HelloGet } from "../api/hello";
 import "./index.css";
 
-export const MainLayout = () => {
+export default function MainLayout() {
   const [count, setCount] = useState(0);
 
   const { run, refresh, data, loading } = useRequest(HelloGet, {
@@ -41,4 +41,4 @@ export const MainLayout = () => {
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </div>
   );
-};
+}
