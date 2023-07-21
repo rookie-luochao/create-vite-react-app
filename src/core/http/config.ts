@@ -1,6 +1,6 @@
 import appConfig from "../../config";
 
-interface IConfig {
+export interface IConfig {
   appName: string;
   baseURL: string;
   version?: string;

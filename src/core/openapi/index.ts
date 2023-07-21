@@ -1,8 +1,9 @@
 import { generateService } from "@umijs/openapi";
+import appConfig, { urlPath } from "../../config";
 
 generateService({
   // 实际schemaPath从环境变量读取
-  schemaPath: "https://srv-gin-demo-server---devops.devops-jiahuayun-dev.rockontrol.com/gin-demo-server",
+  schemaPath: `${appConfig.baseURL}/${urlPath}`,
   serversPath: "./src",
   requestImportStatement: `/// <reference types="./typings.d.ts" />\nimport request from "@request"`,
   namespace: "CloudNativeApi",

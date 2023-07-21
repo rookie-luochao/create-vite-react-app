@@ -2,7 +2,6 @@ import axios, { AxiosRequestConfig } from "axios";
 import { ILoginInfoStorageState, defaultLoginInfoStorage, loginInfoStorageKey } from "../store";
 import { getConfig } from "./config";
 
-// console.log('config:', getConfig())
 const BASE_URL = getConfig().baseURL;
 
 const instance = axios.create({
