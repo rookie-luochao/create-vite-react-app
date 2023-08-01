@@ -65,8 +65,8 @@ generateService({
   serversPath: "./src",
   // 自定义网络请求函数路径
   requestImportStatement: `/// <reference types="./typings.d.ts" />\nimport request from "@request"`,
-  // 代码组织命名空间, 例如：CloudNativeApi
-  namespace: "",
+  // 代码组织命名空间, 例如：Api
+  namespace: "Api",
 });
 
 ```
@@ -88,12 +88,12 @@ const appConfig: IConfig = {
   baseURL: "",
   // 发布版本，例如：221385b-0.0.1
   version: "",
-  // 代码环境，例如：demo
+  // 代码环境，例如：demo, staging, online
   env: "",
 };
 ```
 
-#### 调用接口(react-query), 支持自动loading和接口联动
+#### 调用接口(react-query), 支持自动loading和接口请求联动
 
 ```bash
 // HelloGet是一个基于axios的promise请求
