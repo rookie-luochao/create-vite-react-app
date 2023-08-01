@@ -32,23 +32,24 @@ pnpm openapi
 
 #### 核心技术
 
-* 打包编译 - [vite](https://github.com/vitejs/vite)<br>
-* 包管理 - [pnpm](https://github.com/pnpm/pnpm)<br>
-* 编程语言 - [typescript](https://github.com/microsoft/TypeScript)<br>
-* 前端框架 - [react](https://github.com/facebook/react)<br>
-* 路由 - [react-router](https://github.com/remix-run/react-router)<br>
-* UI组件库 - [antd](https://github.com/ant-design/ant-design)<br>
-* cssinjs - [emotion](https://github.com/emotion-js/emotion)<br>
-* 全局数据共享 - [zustand](https://github.com/pmndrs/zustand)<br>
-* 自动生成api - [openapi](https://github.com/chenshuai2144/openapi2typescript)<br>
-* 网络请求 - [axios](https://github.com/axios/axios)<br>
-* 通用hook - [[ahooks](https://github.com/alibaba/hooks)<br>
-* hack - [babel](https://github.com/babel/babel)<br>
-* 代码检查 - [eslint](https://github.com/eslint/eslint)<br>
-* ts代码检查插件 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)<br>
-* 代码美化 - [prettier](https://github.com/prettier/prettier)<br>
-* git钩子 - [husky](https://github.com/typicode/husky)<br>
-* commit格式化 -[commitlint](https://github.com/conventional-changelog/commitlint)<br>
+* 打包编译 - [vite](https://github.com/vitejs/vite)
+* 包管理 - [pnpm](https://github.com/pnpm/pnpm)
+* 编程语言 - [typescript](https://github.com/microsoft/TypeScript)
+* 前端框架 - [react](https://github.com/facebook/react)
+* 路由 - [react-router](https://github.com/remix-run/react-router)
+* UI组件库 - [antd](https://github.com/ant-design/ant-design)
+* cssinjs(不考虑性能开销) - [emotion](https://github.com/emotion-js/emotion)
+* 全局数据共享 - [zustand](https://github.com/pmndrs/zustand)
+* 自动生成api - [openapi](https://github.com/chenshuai2144/openapi2typescript)
+* 网络请求 - [axios](https://github.com/axios/axios)
+* 数据请求利器 - [react-query](https://github.com/TanStack/query)
+* 通用hook(可不用) - [ahooks](https://github.com/alibaba/hooks)
+* hack - [babel](https://github.com/babel/babel)
+* 代码检查 - [eslint](https://github.com/eslint/eslint)
+* ts代码检查插件 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+* 代码美化 - [prettier](https://github.com/prettier/prettier)
+* git钩子 - [husky](https://github.com/typicode/husky)
+* commit格式化 -[commitlint](https://github.com/conventional-changelog/commitlint)
 
 
 #### 基于openapi自动获取api请求函数
