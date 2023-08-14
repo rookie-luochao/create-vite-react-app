@@ -56,11 +56,11 @@ pnpm openapi
 #### 技术说明
 
 ```
-通用hook(ahooks): 一个hook工具库，该库可以依据个人喜好选用或弃用
+通用hook(ahooks): 一个hook工具库，该库可以依据个人喜好选择是否使用
 
-路由(react-router-dom): 自身默认支持错误边界功能，我觉得react-error-boundary更好用点，所以用hack绕过了react-router-dom的错误边界
+路由(react-router-dom): 自身默认支持错误边界功能，我觉得react-error-boundary更好用点，所以用hack绕过了react-router-dom的错误边界(ps: 暂时不支持参数禁用错误边界)
 
-前端日志(sentry): 暂时未集成，需要进一步调用实用性和可用性
+前端日志(sentry): 暂时未集成，需要进一步调研实用性和可用性
 ```
 
 
