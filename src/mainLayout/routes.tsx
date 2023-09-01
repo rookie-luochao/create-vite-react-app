@@ -1,8 +1,10 @@
-import MainLayout from "./index";
+import { MyMainLayout } from "./index";
 import { pagesRoutes } from "../pages/routes";
 
+export const mainLayoutPath = "main";
+
 export const mainRoutes = {
-  path: "main",
-  element: <MainLayout />,
+  path: mainLayoutPath,
+  element: <MyMainLayout />,
   children: pagesRoutes,
 };
