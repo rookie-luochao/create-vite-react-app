@@ -1,19 +1,14 @@
 // import "./index.css";
 // import { HelloGet, HelloPost } from "../api/hello";
 // import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ReactNode, useEffect, useState } from "react";
-import { DatePicker, DatePickerProps, Dropdown /* , Spin */, Layout, Menu } from "antd";
+import { useEffect, useState } from "react";
+import { DatePicker, DatePickerProps, Dropdown /* , Spin */, Layout } from "antd";
 import { Outlet } from "react-router-dom";
-import { Dictionary, parseQueryString } from "../core/router/utils";
 import { fromEvent, throttleTime } from "rxjs";
 import Sider from "antd/es/layout/Sider";
 import { dsc } from "../core/style/defaultStyleConfig";
-import { IconDown, Logo, UserName } from "./MainLayoutComp";
+import { IconDown, Logo, MenuComp, UserName } from "./MainLayoutComp";
 import { flexCenterOpts } from "../core/style/utils";
-import { uiListModuleName, uiListModuleNameDefaultPath } from "../pages/ui-list/routes";
-import { BuildOutlined } from "@ant-design/icons";
-import { getMenus } from "./utils";
-import { appRoutes } from "../routes";
 
 export function MainLayout() {
   // const queryClient = useQueryClient();
@@ -65,15 +60,9 @@ export function MainLayout() {
   );
 }
 
-export const globalHiddenInMenuParentPath = "globalHiddenInMenuParentPath";
-
 export function MyMainLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const [menuHeight, setMenuHeight] = useState(document.documentElement.clientHeight);
-
-  const [menuActivePath, setMenuActivePath] = useState([`${uiListModuleName}${uiListModuleNameDefaultPath}`]);
-  const pathname = document.location.pathname;
-  const menuOpenKey = !!pathname && pathname.split("/")[1] ? `${pathname.split("/")[1]}` : uiListModuleName;
   const defaultMenuTitleHeight = 64;
 
   useEffect(() => {
@@ -93,25 +82,6 @@ export function MyMainLayout() {
     };
   }, []);
 
-  useEffect(() => {
-    if (pathname) {
-      const query = document.location.search;
-      let queryObj;
-      let menuActivePath = pathname;
-      if (query) {
-        queryObj = parseQueryString(query);
-      }
-      if (queryObj && queryObj[globalHiddenInMenuParentPath]) {
-        menuActivePath = queryObj[globalHiddenInMenuParentPath];
-      }
-      setMenuActivePath([menuActivePath]);
-    }
-  }, [pathname]);
-
-  const modulePathToIconMap = {
-    [uiListModuleName]: <BuildOutlined />,
-  } as Dictionary<ReactNode>;
-
   return (
     <Layout>
       <Sider
@@ -123,20 +93,7 @@ export function MyMainLayout() {
         onCollapse={setCollapsed}
       >
         <Logo inlineCollapsed={collapsed} />
-        <Menu
-          theme={"light"}
-          mode="inline"
-          selectedKeys={menuActivePath}
-          defaultOpenKeys={[`/${menuOpenKey}`]}
-          onSelect={({ key }) => {
-            setMenuActivePath([key]);
-          }}
-        >
-          {getMenus({
-            routes: appRoutes,
-            modulePathToIconMap,
-          })}
-        </Menu>
+        <MenuComp />
       </Sider>
       <Layout className="site-layout" css={{ backgroundColor: dsc.color.bg }}>
         <div

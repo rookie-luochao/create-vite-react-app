@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import { UIOne } from "./UIOne";
 
 export const uiListModuleName = "ui-list";
@@ -7,7 +6,6 @@ export const uiListModuleNameDefaultPath = "icon";
 export const uiListRoutes = {
   path: uiListModuleName,
   id: "UI组件",
-  element: <Outlet />,
   children: [
     {
       path: uiListModuleNameDefaultPath,

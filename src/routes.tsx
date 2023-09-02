@@ -6,11 +6,11 @@ import { ErrorBoundaryWrapOutlet } from "./core/error-boundary";
 function getAppRoutes() {
   return [
     {
-      path: "",
+      path: "/",
       element: <ErrorBoundaryWrapOutlet />,
       children: [
         {
-          path: "",
+          index: true,
           element: <Navigate to="/login" />,
         },
         loginRoutes,

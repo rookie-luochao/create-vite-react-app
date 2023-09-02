@@ -12,7 +12,7 @@ export const pagesRoutes = [
     element: <Module1 />,
   },
   {
-    path: "module2/:id",
+    path: "module2",
     id: "模块二",
     element: <Module2 />,
   },
