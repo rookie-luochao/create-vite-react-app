@@ -1,14 +1,12 @@
-// import "./index.css";
 // import { HelloGet, HelloPost } from "../api/hello";
 // import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { DatePicker, DatePickerProps, Dropdown /* , Spin */, Layout } from "antd";
+import { DatePicker, DatePickerProps /* , Spin */, Layout } from "antd";
 import { Outlet } from "react-router-dom";
 import { fromEvent, throttleTime } from "rxjs";
 import Sider from "antd/es/layout/Sider";
 import { dsc } from "../core/style/defaultStyleConfig";
-import { IconDown, Logo, MenuComp, UserName } from "./MainLayoutComp";
-import { flexCenterOpts } from "../core/style/utils";
+import { Logo, MenuComp, ToolBar } from "./MainLayoutComp";
 
 export function MainLayout() {
   // const queryClient = useQueryClient();
@@ -96,25 +94,7 @@ export function MyMainLayout() {
         <MenuComp />
       </Sider>
       <Layout className="site-layout" css={{ backgroundColor: dsc.color.bg }}>
-        <div
-          css={{
-            padding: 12,
-            height: 64,
-            backgroundColor: "#fff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-          }}
-        >
-          <div css={flexCenterOpts()}>
-            <UserName />
-            <Dropdown menu={{ items: [{ key: "1", label: "退出登录" }] }}>
-              <a onClick={(e) => e.preventDefault()}>
-                <IconDown />
-              </a>
-            </Dropdown>
-          </div>
-        </div>
+        <ToolBar />
         <div
           css={{
             padding: 24,
