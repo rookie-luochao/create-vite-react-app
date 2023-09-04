@@ -1,8 +1,8 @@
-export const defaultLinkPath = "/main/module1";
+export const defaultLinkPath = "/main/dashboard";
 
 export const defaultUserInfo = {
   username: "admin",
-  password: "admin",
+  password: "adminadmin",
 };
 
 export const defaultLoginInfo = {
