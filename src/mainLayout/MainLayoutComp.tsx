@@ -4,7 +4,7 @@ import { useLoginStore } from "../core/store";
 import LogoMiniIcon from "../assets/images/logo_mini.svg";
 import LogoIcon from "../assets/images/logo.svg";
 import { uiListModuleName } from "../pages/ui-list/routes";
-import { BuildOutlined } from "@ant-design/icons";
+import { BuildOutlined, ToolOutlined } from "@ant-design/icons";
 import { Dictionary, parseQueryString } from "../core/router/utils";
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { find } from "lodash-es";
@@ -14,6 +14,7 @@ import { getMenus } from "./utils";
 import { flexCenterOpts } from "../core/style/utils";
 import { useNavigate } from "react-router-dom";
 import { dashboardModuleName } from "../pages/module/routes";
+import { utilListModuleName } from "../pages/util-list/routes";
 
 export const globalHiddenInMenuParentPath = "globalHiddenInMenuParentPath";
 
@@ -45,6 +46,7 @@ export function MenuComp() {
 
   const modulePathToIconMap = {
     [uiListModuleName]: <BuildOutlined />,
+    [utilListModuleName]: <ToolOutlined />,
   } as Dictionary<ReactNode>;
 
   const menuItems = useMemo(() => {
