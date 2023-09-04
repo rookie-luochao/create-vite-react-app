@@ -3,6 +3,7 @@ import { useLoginStore } from "../core/store";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { flexCenterOpts } from "../core/style/utils";
+import { defaultLinkPath, defaultLoginInfo, defaultUserInfo } from "./config";
 
 interface ILogin {
   username: string;
@@ -16,12 +17,9 @@ export default function Login() {
   const navigate = useNavigate();
 
   const onFinish = (values: ILogin) => {
-    if (values.username === "admin" && values.password === "admin") {
-      updateLoginInfo({
-        accessToken: "123456",
-        name: "张三",
-      });
-      navigate("/main/module1");
+    if (values.username === defaultUserInfo.username && values.password === defaultUserInfo.password) {
+      updateLoginInfo(defaultLoginInfo);
+      navigate(defaultLinkPath);
     } else {
       message.warning("用户名或密码错误，请检查！");
     }

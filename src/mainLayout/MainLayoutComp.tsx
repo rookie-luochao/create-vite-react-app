@@ -3,7 +3,7 @@ import { dsc } from "../core/style/defaultStyleConfig";
 import { useLoginStore } from "../core/store";
 import LogoMiniIcon from "../assets/images/logo_mini.svg";
 import LogoIcon from "../assets/images/logo.svg";
-import { uiListModuleName, uiListModuleNameDefaultPath } from "../pages/ui-list/routes";
+import { uiListModuleName } from "../pages/ui-list/routes";
 import { BuildOutlined } from "@ant-design/icons";
 import { Dictionary, parseQueryString } from "../core/router/utils";
 import { ReactNode, useEffect, useMemo, useState } from "react";
@@ -13,11 +13,12 @@ import { mainLayoutPath } from "./routes";
 import { getMenus } from "./utils";
 import { flexCenterOpts } from "../core/style/utils";
 import { useNavigate } from "react-router-dom";
+import { dashboardModuleName } from "../pages/module/routes";
 
 export const globalHiddenInMenuParentPath = "globalHiddenInMenuParentPath";
 
 export function MenuComp() {
-  const defaultMenuActivePath = `/${mainLayoutPath}/${uiListModuleName}/${uiListModuleNameDefaultPath}`;
+  const defaultMenuActivePath = `/${mainLayoutPath}/${dashboardModuleName}`;
   const [menuActivePath, setMenuActivePath] = useState([defaultMenuActivePath]);
   const pathname = document.location.pathname;
   const menuOpenKey = pathname
