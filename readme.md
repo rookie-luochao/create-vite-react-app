@@ -3,7 +3,7 @@
 * 支持自动根据openapi生成api request函数、类型、枚举等, [openapi格式参考](https://srv-demo-docker.onrender.com/openapi)
 * 支持前端工程化
 * 支持前端容器化
-* 支持自动loading
+* 同步接口请求状态，实现自动loading
 * 支持接口联动，方便跨父子组件刷新相关联的接口
 * 支持容器化变量注入，无需前端配置文件写死，方便通过 k8s 动态注入
 * 后续支持更好用的modal，更好用的form
