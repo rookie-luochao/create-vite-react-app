@@ -1,6 +1,6 @@
 import { IConfig } from "./core/http/config";
 
-// 一级path, 例如：demo-server
+// 一级path, 例如：openapi
 export const urlPath = "";
 
 // 项目基本变量配置
