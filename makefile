@@ -9,6 +9,9 @@ docker-run:
 
 docker-build-run: docker-build docker-run
 
+install: 
+	pnpm install
+
 dev: 
 	npm run dev
 
