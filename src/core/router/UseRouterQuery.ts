@@ -7,7 +7,7 @@ export interface ParsedUrlQuery {
   [key: string]: ParsedUrlQueryValue;
 }
 
-export function useQuery<T extends ParsedUrlQuery>() {
+export function useRouterQuery<T extends ParsedUrlQuery>() {
   const { search } = useLocation();
   const navigate = useNavigate();
   const queryState = useRef(parseQueryString(search) as T);
