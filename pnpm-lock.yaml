@@ -31,6 +31,7 @@ specifiers:
   react-error-boundary: ^4.0.11
   react-markdown: ^8.0.7
   react-router-dom: ^6.14.1
+  react-router-toolkit: ^1.0.0
   rxjs: ^7.8.1
   ts-node: ^10.9.1
   typescript: ^5.0.2
@@ -50,6 +51,7 @@ dependencies:
   react-error-boundary: 4.0.11_react@18.2.0
   react-markdown: 8.0.7_ahyjqase67bbhtw6poqhaowpdq
   react-router-dom: 6.18.0_biqbaboplfbrettd7655fr4n2y
+  react-router-toolkit: 1.0.0
   rxjs: 7.8.1
   zustand: 4.4.6_ahyjqase67bbhtw6poqhaowpdq
 
@@ -7002,6 +7004,15 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router: 6.18.0_react@18.2.0
+    dev: false
+
+  /react-router-toolkit/1.0.0:
+    resolution: {integrity: sha512-OIUWpRaOBadnE3kKWSu5fDRsFbTBRoPkkRaC7LITb11rsNPlLypc291HLOtNhB4LzOu5EqJCqq6pIobAQ3mW/g==}
+    dependencies:
+      lodash-es: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router-dom: 6.18.0_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /react-router/6.18.0_react@18.2.0:
