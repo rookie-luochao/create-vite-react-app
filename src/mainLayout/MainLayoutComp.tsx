@@ -1,20 +1,21 @@
-import { Avatar, Dropdown, Menu } from "antd";
-import { dsc } from "../core/style/defaultStyleConfig";
-import { useLoginInfoStore } from "../core/store";
-import LogoMiniIcon from "../assets/images/logo_mini.svg";
-import LogoIcon from "../assets/images/logo.svg";
-import { uiListModuleName } from "../pages/ui-list/routes";
 import { BuildOutlined, DashboardOutlined, ToolOutlined } from "@ant-design/icons";
-import { Dictionary, parseQueryString } from "react-router-toolkit";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { Avatar, Dropdown, Menu } from "antd";
 import { find } from "lodash-es";
+import { ReactNode, useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Dictionary, parseQueryString } from "react-router-toolkit";
+
+import LogoIcon from "../assets/images/logo.svg";
+import LogoMiniIcon from "../assets/images/logo_mini.svg";
+import { useLoginInfoStore } from "../core/store";
+import { dsc } from "../core/style/defaultStyleConfig";
+import { flexCenterOpts } from "../core/style/utils";
+import { dashboardModuleName } from "../pages/dashboard/routes";
+import { uiListModuleName } from "../pages/ui-list/routes";
+import { utilListModuleName } from "../pages/util-list/routes";
 import { appRoutes } from "../rootRoutes";
 import { mainLayoutPath } from "./routes";
 import { getMenus } from "./utils";
-import { flexCenterOpts } from "../core/style/utils";
-import { useNavigate } from "react-router-dom";
-import { dashboardModuleName } from "../pages/dashboard/routes";
-import { utilListModuleName } from "../pages/util-list/routes";
 
 export const globalHiddenInMenuParentPath = "globalHiddenInMenuParentPath";
 
@@ -65,10 +66,10 @@ export function MenuComp() {
       mode="inline"
       selectedKeys={menuActivePath}
       defaultOpenKeys={[menuOpenKey]}
+      items={menuItems}
       onSelect={({ key }) => {
         setMenuActivePath([key]);
       }}
-      items={menuItems}
     />
   );
 }
