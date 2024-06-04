@@ -15,6 +15,6 @@ RUN --mount=type=cache,target=/src/node_modules,id=myapp_pnpm_module,sharing=loc
 RUN --mount=type=cache,target=/src/node_modules,id=myapp_pnpm_module,sharing=locked \
         pnpm run build
 
-FROM ghcr.io/zboyco/webrunner:0.0.8
+FROM ghcr.io/rookie-luochao/nginx-runner:latest
 
 COPY --from=builder /src/dist /app
