@@ -15,8 +15,8 @@ dependencies:
     specifier: ^4.32.0
     version: 4.36.1(react-dom@18.3.1)(react@18.3.1)
   ahooks:
-    specifier: ^3.7.8
-    version: 3.7.8(react@18.3.1)
+    specifier: ^3.8.0
+    version: 3.8.0(react@18.3.1)
   antd:
     specifier: ^5.18.0
     version: 5.18.0(react-dom@18.3.1)(react@18.3.1)
@@ -2599,10 +2599,6 @@ packages:
       '@types/unist': 2.0.9
     dev: false
 
-  /@types/js-cookie@2.2.7:
-    resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==}
-    dev: false
-
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
@@ -3136,24 +3132,19 @@ packages:
     hasBin: true
     dev: true
 
-  /ahooks-v3-count@1.0.0:
-    resolution: {integrity: sha512-V7uUvAwnimu6eh/PED4mCDjE7tokeZQLKlxg9lCTMPhN+NjsSbtdacByVlR1oluXQzD3MOw55wylDmQo4+S9ZQ==}
-    dev: false
-
-  /ahooks@3.7.8(react@18.3.1):
-    resolution: {integrity: sha512-e/NMlQWoCjaUtncNFIZk3FG1ImSkV/JhScQSkTqnftakRwdfZWSw6zzoWSG9OMYqPNs2MguDYBUFFC6THelWXA==}
+  /ahooks@3.8.0(react@18.3.1):
+    resolution: {integrity: sha512-M01m+mxLRNNeJ/PCT3Fom26UyreTj6oMqJBetUrJnK4VNI5j6eMA543Xxo53OBXn6XibA2FXKcCCgrT6YCTtKQ==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.23.2
-      '@types/js-cookie': 2.2.7
-      ahooks-v3-count: 1.0.0
+      '@babel/runtime': 7.24.6
       dayjs: 1.11.10
       intersection-observer: 0.12.2
       js-cookie: 2.2.1
       lodash: 4.17.21
       react: 18.3.1
+      react-fast-compare: 3.2.2
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
       tslib: 2.6.2
@@ -7400,6 +7391,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.24.6
       react: 18.3.1
+    dev: false
+
+  /react-fast-compare@3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
     dev: false
 
   /react-is@16.13.1:
