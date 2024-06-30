@@ -13,7 +13,7 @@
     "openapi": "ts-node './src/core/openapi/index.ts'"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.5",
+    "@ant-design/icons": "^5.3.7",
     "@emotion/react": "^11.11.1",
     "@tanstack/react-query": "^4.32.0",
     "ahooks": "^3.8.0",
