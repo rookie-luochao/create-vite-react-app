@@ -70,8 +70,8 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0(prettier@3.0.3)
       '@types/lodash-es':
-        specifier: ^4.17.8
-        version: 4.17.10
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -1386,8 +1386,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/lodash-es@4.17.10':
-    resolution: {integrity: sha512-YJP+w/2khSBwbUSFdGsSqmDvmnN3cCKoPOL7Zjle6s30ZtemkkqhjVfFqGwPN7ASil5VyjE2GtyU/yqYY6mC0A==}
+  '@types/lodash-es@4.17.12':
+    resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
 
   '@types/lodash@4.14.200':
     resolution: {integrity: sha512-YI/M/4HRImtNf3pJgbF+W6FrXovqj+T+/HpENLTooK9PnkacBsDpeP3IpHab40CClUfhNmdM2WTNP2sa2dni5Q==}
@@ -5964,18 +5964,18 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@stylelint/postcss-css-in-js@0.37.3(postcss-syntax@0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)':
+  '@stylelint/postcss-css-in-js@0.37.3(postcss-syntax@0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)':
     dependencies:
       '@babel/core': 7.23.2
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
+      postcss-syntax: 0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
     transitivePeerDependencies:
       - supports-color
 
-  '@stylelint/postcss-markdown@0.36.2(postcss-syntax@0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)':
+  '@stylelint/postcss-markdown@0.36.2(postcss-syntax@0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)':
     dependencies:
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
+      postcss-syntax: 0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
       remark: 13.0.0
       unist-util-find-all-after: 3.0.2
     transitivePeerDependencies:
@@ -6058,7 +6058,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/lodash-es@4.17.10':
+  '@types/lodash-es@4.17.12':
     dependencies:
       '@types/lodash': 4.14.200
 
@@ -8621,11 +8621,11 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  postcss-html@0.36.0(postcss-syntax@0.36.2)(postcss@7.0.39):
+  postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39):
     dependencies:
       htmlparser2: 3.10.1
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
+      postcss-syntax: 0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
 
   postcss-less@3.1.4:
     dependencies:
@@ -8662,11 +8662,11 @@ snapshots:
       lodash: 4.17.21
       postcss: 8.4.31
 
-  postcss-syntax@0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39):
+  postcss-syntax@0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39):
     dependencies:
       postcss: 7.0.39
     optionalDependencies:
-      postcss-html: 0.36.0(postcss-syntax@0.36.2)(postcss@7.0.39)
+      postcss-html: 0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39)
       postcss-less: 3.1.4
       postcss-scss: 2.1.1
 
@@ -9555,8 +9555,8 @@ snapshots:
 
   stylelint@13.13.1:
     dependencies:
-      '@stylelint/postcss-css-in-js': 0.37.3(postcss-syntax@0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)
-      '@stylelint/postcss-markdown': 0.36.2(postcss-syntax@0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)
+      '@stylelint/postcss-css-in-js': 0.37.3(postcss-syntax@0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)
+      '@stylelint/postcss-markdown': 0.36.2(postcss-syntax@0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39))(postcss@7.0.39)
       autoprefixer: 9.8.8
       balanced-match: 2.0.0
       chalk: 4.1.2
@@ -9582,7 +9582,7 @@ snapshots:
       micromatch: 4.0.5
       normalize-selector: 0.2.0
       postcss: 7.0.39
-      postcss-html: 0.36.0(postcss-syntax@0.36.2)(postcss@7.0.39)
+      postcss-html: 0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39)
       postcss-less: 3.1.4
       postcss-media-query-parser: 0.2.3
       postcss-resolve-nested-selector: 0.1.1
@@ -9590,7 +9590,7 @@ snapshots:
       postcss-sass: 0.4.4
       postcss-scss: 2.1.1
       postcss-selector-parser: 6.0.13
-      postcss-syntax: 0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
+      postcss-syntax: 0.36.2(postcss-html@0.36.0(postcss-syntax@0.36.2(postcss@7.0.39))(postcss@7.0.39))(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
       postcss-value-parser: 4.2.0
       resolve-from: 5.0.0
       slash: 3.0.0
