@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.22.15",
     "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/config-conventional": "^19.2.2",
     "@emotion/babel-plugin": "^11.11.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/lodash-es": "^4.17.12",
