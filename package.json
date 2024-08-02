@@ -2,6 +2,7 @@
   "name": "webapp-react",
   "private": true,
   "version": "0.0.1",
+  "packageManager": "pnpm@9.4.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +11,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lintfix": "eslint . --ext ts,tsx --fix",
     "prepare": "husky install",
-    "openapi": "ts-node './src/core/openapi/index.ts'"
+    "openapi-ts": "openapi-ts"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
@@ -48,6 +49,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
+    "openapi-ts-request": "^0.4.7",
     "prettier": "^3.0.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.0.2",

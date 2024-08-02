@@ -3,7 +3,7 @@
 该模板可以帮助您在 Vite 中使用 React 和 TypeScript 进行开发web应用.
 
 #### 概览
-* 学习搭建一个web应用开发脚手架，最大限度使用社区优秀开源方案
+* 搭建一个web应用开发脚手架，最大限度使用社区优秀开源方案
 * 支持自动根据openapi生成api request函数、类型、枚举等, [openapi格式参考](https://srv-demo-docker.onrender.com/openapi)
 * 支持前端工程化
 * 支持前端容器化(需要安装docker环境)
