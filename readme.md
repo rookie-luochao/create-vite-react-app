@@ -1,17 +1,16 @@
-# React + TypeScript + Vite + Pnpm + Zustand + Openapi + Docker
+# React + TypeScript + Vite + Pnpm + Zustand + React-Query + OpenAPI-TS-Request + Docker
 
 该模板可以帮助您在 Vite 中使用 React 和 TypeScript 进行开发web应用.
 
 #### 概览
 * 搭建一个web应用开发脚手架，最大限度使用社区优秀开源方案
-* 支持自动根据openapi生成api request函数、类型、枚举等, [openapi格式参考](https://srv-demo-docker.onrender.com/openapi)
+* 支持自动根据 openapi 生成ts、request client、mock服务等等, [openapi格式参考](https://swagger.io/blog/news/whats-new-in-openapi-3-0/)
 * 支持前端工程化
-* 支持前端容器化(需要安装docker环境)
+* 支持前端容器化(需要安装 docker 环境)
 * 同步接口请求状态，实现自动loading
-* 支持接口联动，方便跨父子组件刷新相关联的接口
+* 支持接口联动，方便跨任意组件刷新相关联的接口，而无需依赖 store 共享状态，无需垮多级组件传入回调函数
 * 支持容器化变量注入，无需前端配置文件写死，方便通过 k8s 动态注入
 * 后续支持更好用的modal，更好用的form
-* 此脚手架最佳实战参考[rookie-luochao/react](https://github.com/rookie-luochao/react)
   
 #### 核心技术
 * 打包编译 - [vite](https://github.com/vitejs/vite)
@@ -22,10 +21,9 @@
 * UI组件库 - [antd](https://github.com/ant-design/ant-design)
 * cssinjs(不考虑性能开销) - [emotion](https://github.com/emotion-js/emotion)
 * 全局数据共享 - [zustand](https://github.com/pmndrs/zustand)
-* 自动生成api - [openapi](https://github.com/chenshuai2144/openapi2typescript)
+* 自动生成api - [openapi-ts-request](https://github.com/openapi-ui/openapi-ts-request)
 * 网络请求 - [axios](https://github.com/axios/axios)
 * 数据请求利器 - [react-query](https://github.com/TanStack/query)
-* 通用hook - [ahooks](https://github.com/alibaba/hooks)
 * 错误边界 - [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
 * 前端日志(暂未集成) - [sentry-javascript](https://github.com/getsentry/sentry-javascript)
 * hack - [babel](https://github.com/babel/babel)
@@ -36,10 +34,11 @@
 * commit格式化 -[commitlint](https://github.com/conventional-changelog/commitlint)
 
 #### 技术说明
-* 自动生成api(openapi): 后端接入apenapi后，前端可以根据openapi文件自动生成request api
-* 路由(react-router-dom): 自身默认支持错误边界功能，我觉得react-error-boundary更好用点，所以用hack绕过了react-router-dom的错误边界(ps: react-router-dom暂时不支持参数禁用它自带的错误边界)
-* 通用hook(ahooks): 一个hook工具库，该库可以依据个人喜好选择是否使用
-* 前端日志(sentry): 暂时未集成，需要进一步调研实用性和可用性
+- 自动生成接口请求相关 ts 代码(openapi-ts-request): 后端接入 apifox 后，前端可以根据 openapi 文件自动生成请求客户端，支持 axios、uniapp.request等等客户端，接口相关联的 ts 类型，[文档地址](https://github.com/openapi-ui/openapi-ts-request)
+- 数据共享使用zustand，各个数据都支持建立单一仓库，开发和性能体验更好，[文档地址](https://zustand-demo.pmnd.rs)
+- 接口调用使用 react-query 进行增强，主要用于接口调用状态同步，多接口跨组件联动，[文档地址](https://tanstack.com/query/latest)
+- 路由(react-router-dom): 自身默认支持错误边界功能，我觉得 react-error-boundary 更好用点，所以用hack绕过了 react-router-dom 的错误边界(ps: react-router-dom 暂时不支持参数禁用它自带的错误边界)，[文档地址](https://reactrouter.com/en/main)
+- 组件库使用 antd 组件库，[文档地址](https://ant.design/components/overview-cn)
 
 #### 快速开始
 ```bash
@@ -77,23 +76,21 @@ make docker-build-run
 
 #### 基于openapi自动获取api请求函数，配置如下
 ```js
-// src/core/openapi/index.ts
+// openapi-ts-request.config.ts
 
 // 示例代码
-generateService({
-  // openapi地址
-  schemaPath: `${appConfig.baseURL}/${urlPath}`,
-  // 文件生成目录
-  serversPath: "./src",
-  // 自定义网络请求函数路径
-  requestImportStatement: `/// <reference types="./typings.d.ts" />\nimport request from "@request"`,
-  // 代码组织命名空间, 例如：Api
-  namespace: "Api",
-});
+import type { GenerateServiceProps } from "openapi-ts-request";
+
+export default [
+  {
+    schemaPath: "https://petstore3.swagger.io/api/v3/openapi.json",
+    serversPath: "./src/apis",
+  },
+] as GenerateServiceProps[];
 ```
 
 #### 应用配置
-```js
+```ts
 // src/config.ts
 
 // 一级path, 例如：openapi
