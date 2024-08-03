@@ -1,9 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import { useLoginInfoStore } from "../core/store";
-import { Button, Checkbox, Form, Input, message } from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { flexCenterOpts } from "../core/style/utils";
-import { defaultLinkPath, defaultLoginInfo, defaultUserInfo } from "./config";
+import { useLoginInfoStore } from '@/core/store';
+import { flexCenterOpts } from '@/core/style/utils';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Form, Input, message } from 'antd';
+import { useNavigate } from 'react-router-dom';
+
+import { defaultLinkPath, defaultLoginInfo, defaultUserInfo } from './config';
 
 interface ILogin {
   username: string;
@@ -21,7 +22,7 @@ export default function Login() {
       updateLoginInfo(defaultLoginInfo);
       navigate(defaultLinkPath);
     } else {
-      message.warning("用户名或密码错误，请检查！");
+      message.warning('用户名或密码错误，请检查！');
     }
   };
 
@@ -30,9 +31,9 @@ export default function Login() {
       css={[
         {
           height: globalThis.document.documentElement.clientHeight,
-          backgroundImage: "url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg)",
-          backgroundSize: "100% 100%",
-          backgroundRepeat: "no-repeat",
+          backgroundImage: 'url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg)',
+          backgroundSize: '100% 100%',
+          backgroundRepeat: 'no-repeat',
         },
         flexCenterOpts(),
       ]}
@@ -44,10 +45,10 @@ export default function Login() {
         initialValues={{ username: defaultUserInfo.username, password: defaultUserInfo.password, remember: true }}
         onFinish={onFinish}
       >
-        <Form.Item name="username" rules={[{ required: true, message: "Please input your Username!" }]}>
+        <Form.Item name="username" rules={[{ required: true, message: 'Please input your Username!' }]}>
           <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder={defaultUserInfo.username} />
         </Form.Item>
-        <Form.Item name="password" rules={[{ required: true, message: "Please input your Password!" }]}>
+        <Form.Item name="password" rules={[{ required: true, message: 'Please input your Password!' }]}>
           <Input
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
@@ -58,12 +59,12 @@ export default function Login() {
           <Form.Item name="remember" valuePropName="checked" noStyle>
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
-          <a css={{ float: "right" }} href="">
+          <a css={{ float: 'right' }} href="">
             Forgot password
           </a>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit" className="login-form-button" style={{ width: "100%" }}>
+          <Button type="primary" htmlType="submit" className="login-form-button" style={{ width: '100%' }}>
             Log in
           </Button>
           Or <a href="">register now!</a>

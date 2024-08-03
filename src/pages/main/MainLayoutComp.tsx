@@ -1,68 +1,68 @@
-import { BuildOutlined, DashboardOutlined, ToolOutlined } from "@ant-design/icons";
-import { Avatar, Dropdown, Menu } from "antd";
-import { find } from "lodash-es";
-import { ReactNode, useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Dictionary, parseQueryString } from "react-router-toolkit";
+import LogoIcon from '@/assets/images/logo.svg';
+import LogoMiniIcon from '@/assets/images/logo_mini.svg';
+import { useLoginInfoStore } from '@/core/store';
+import { dsc } from '@/core/style/defaultStyleConfig';
+import { flexCenterOpts } from '@/core/style/utils';
+import { dashboardModuleName, mainLayoutModuleName, uiListModuleName, utilListModuleName } from '@/router/config';
+import routes from '@/router/routes';
+import { BuildOutlined, DashboardOutlined, ToolOutlined } from '@ant-design/icons';
+import { Avatar, Dropdown, Menu } from 'antd';
+import { find } from 'lodash-es';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Dictionary, parseQueryString } from 'react-router-toolkit';
 
-import LogoIcon from "../assets/images/logo.svg";
-import LogoMiniIcon from "../assets/images/logo_mini.svg";
-import { useLoginInfoStore } from "../core/store";
-import { dsc } from "../core/style/defaultStyleConfig";
-import { flexCenterOpts } from "../core/style/utils";
-import { dashboardModuleName } from "../pages/dashboard/routes";
-import { uiListModuleName } from "../pages/ui-list/routes";
-import { utilListModuleName } from "../pages/util-list/routes";
-import { appRoutes } from "../rootRoutes";
-import { mainLayoutPath } from "./routes";
-import { getMenus } from "./utils";
+import { getMenus } from './utils';
 
-export const globalHiddenInMenuParentPath = "globalHiddenInMenuParentPath";
+export const globalHiddenInMenuParentPath = 'globalHiddenInMenuParentPath';
 
 export function MenuComp() {
-  const defaultMenuActivePath = `/${mainLayoutPath}/${dashboardModuleName}`;
+  const defaultMenuActivePath = `/${mainLayoutModuleName}/${dashboardModuleName}`;
   const [menuActivePath, setMenuActivePath] = useState([defaultMenuActivePath]);
   const pathname = document.location.pathname;
   const menuOpenKey = pathname
     ? pathname
-        .split("/")
-        .slice(0, pathname.split("/").length - 1)
-        .join("/")
-    : "";
+        .split('/')
+        .slice(0, pathname.split('/').length - 1)
+        .join('/')
+    : '';
 
   useEffect(() => {
     if (pathname) {
       const query = document.location.search;
       let queryObj;
       let menuActivePath = pathname;
+
       if (query) {
         queryObj = parseQueryString(query);
       }
+
       if (queryObj && queryObj[globalHiddenInMenuParentPath]) {
         menuActivePath = queryObj[globalHiddenInMenuParentPath] as string;
       }
+
       setMenuActivePath([menuActivePath]);
     }
   }, [pathname]);
 
-  const modulePathToIconMap = {
-    [dashboardModuleName]: <DashboardOutlined />,
-    [uiListModuleName]: <BuildOutlined />,
-    [utilListModuleName]: <ToolOutlined />,
-  } as Dictionary<ReactNode>;
-
   const menuItems = useMemo(() => {
-    const mainRoutes = find(appRoutes[0].children, (route) => route.path === mainLayoutPath);
+    const mainRoutes = find(routes[0].children, (route) => route.path === mainLayoutModuleName);
+    const moduleNameToIconMap = {
+      [dashboardModuleName]: <DashboardOutlined />,
+      [uiListModuleName]: <BuildOutlined />,
+      [utilListModuleName]: <ToolOutlined />,
+    } as Dictionary<ReactNode>;
+
     return getMenus({
       routes: mainRoutes?.children || [],
-      modulePathToIconMap,
-      to: `/${mainLayoutPath}`,
+      moduleNameToIconMap,
+      to: `/${mainLayoutModuleName}`,
     });
   }, []);
 
   return (
     <Menu
-      theme={"light"}
+      theme={'light'}
       mode="inline"
       selectedKeys={menuActivePath}
       defaultOpenKeys={[menuOpenKey]}
@@ -80,9 +80,9 @@ export const Logo = ({ inlineCollapsed }: { inlineCollapsed?: boolean }) => {
       className="logo"
       css={{
         height: 80,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <img src={inlineCollapsed ? LogoMiniIcon : LogoIcon} alt="logo" />
@@ -94,12 +94,12 @@ const UserName = () => {
   const { loginInfo } = useLoginInfoStore((state) => state);
 
   return (
-    <div css={{ display: "flex", alignItems: "center" }}>
-      <Avatar shape="square" style={{ backgroundColor: dsc.color.primary, verticalAlign: "middle", borderRadius: 4 }}>
+    <div css={{ display: 'flex', alignItems: 'center' }}>
+      <Avatar shape="square" style={{ backgroundColor: dsc.color.primary, verticalAlign: 'middle', borderRadius: 4 }}>
         {loginInfo?.name?.slice(0, 1)}
       </Avatar>
       {loginInfo ? (
-        <div css={{ color: dsc.color.text, fontSize: dsc.fontSize.s, padding: "0em 0.6em" }}>{loginInfo?.name}</div>
+        <div css={{ color: dsc.color.text, fontSize: dsc.fontSize.s, padding: '0em 0.6em' }}>{loginInfo?.name}</div>
       ) : null}
     </div>
   );
@@ -148,10 +148,10 @@ export function ToolBar() {
       css={{
         padding: 12,
         height: 64,
-        backgroundColor: "#fff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "flex-end",
+        backgroundColor: '#fff',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
       }}
     >
       <div css={flexCenterOpts()}>
@@ -160,11 +160,11 @@ export function ToolBar() {
           menu={{
             items: [
               {
-                key: "1",
-                label: "退出登录",
+                key: '1',
+                label: '退出登录',
                 onClick() {
                   clear();
-                  navigate("/login");
+                  navigate('/login');
                 },
               },
             ],

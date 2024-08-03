@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
-import { Layout } from "antd";
-import { Outlet } from "react-router-dom";
-import { fromEvent, throttleTime } from "rxjs";
-import Sider from "antd/es/layout/Sider";
-import { dsc } from "../core/style/defaultStyleConfig";
-import { Logo, MenuComp, ToolBar } from "./MainLayoutComp";
+import { dsc } from '@/core/style/defaultStyleConfig';
+import { Layout } from 'antd';
+import Sider from 'antd/es/layout/Sider';
+import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { fromEvent, throttleTime } from 'rxjs';
 
-export function MainLayout() {
+import { Logo, MenuComp, ToolBar } from './MainLayoutComp';
+
+export default function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const [menuHeight, setMenuHeight] = useState(document.documentElement.clientHeight);
   const defaultMenuTitleHeight = 64;
 
   useEffect(() => {
-    const subscription = fromEvent(window, "resize")
+    const subscription = fromEvent(window, 'resize')
       .pipe(throttleTime(1000))
       .subscribe(() => {
         const timeoutId = globalThis.setTimeout(() => {
@@ -31,9 +32,9 @@ export function MainLayout() {
   return (
     <Layout>
       <Sider
-        theme={"light"}
+        theme={'light'}
         width={240}
-        css={{ height: menuHeight, overflow: "scroll" }}
+        css={{ height: menuHeight, overflow: 'scroll' }}
         collapsible
         collapsed={collapsed}
         onCollapse={setCollapsed}
@@ -45,11 +46,11 @@ export function MainLayout() {
         <ToolBar />
         <div
           css={{
-            padding: 24,
+            padding: 16,
             backgroundColor: dsc.color.bgGray,
-            overflow: "scroll",
+            overflow: 'scroll',
             height: menuHeight - defaultMenuTitleHeight,
-            borderRadius: "10px 0 0",
+            borderRadius: '10px 0 0',
           }}
         >
           <Outlet />

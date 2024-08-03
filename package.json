@@ -89,6 +89,7 @@
     ]
   },
   "prettier": {
+    "singleQuote": true,
     "arrowParens": "always",
     "printWidth": 120,
     "importOrder": [

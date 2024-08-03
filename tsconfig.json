@@ -2,6 +2,7 @@
   "compilerOptions": {
     "types": ["@emotion/react/types/css-prop", "node"],
     "paths": {
+      "@/*": ["./src/*"],
       "@request": ["./src/core/http/request.ts"]
     },
     "target": "ES2020",

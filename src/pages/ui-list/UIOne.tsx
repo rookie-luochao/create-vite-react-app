@@ -1,5 +1,5 @@
-import { IconDown } from "../../mainLayout/MainLayoutComp";
+import { IconDown } from '@/pages/main/MainLayoutComp';
 
-export function UIOne() {
+export default function UIOne() {
   return <IconDown />;
 }

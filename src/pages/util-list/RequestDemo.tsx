@@ -1,7 +1,7 @@
-import { Card } from "antd";
-import ReactMarkdown from "react-markdown";
+import { Card } from 'antd';
+import ReactMarkdown from 'react-markdown';
 
-export function RequestDemo() {
+export default function RequestDemo() {
   const getRequestDemo = `
     ~~~js
       // HelloGet是一个基于axios的promise请求
@@ -90,7 +90,7 @@ export function RequestDemo() {
   `;
 
   return (
-    <div css={{ "& > * + *": { marginTop: 12 } }}>
+    <div css={{ '& > * + *': { marginTop: 12 } }}>
       <Card title="获取数据" bordered={false}>
         <ReactMarkdown>{getRequestDemo}</ReactMarkdown>
       </Card>

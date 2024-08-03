@@ -1,7 +1,7 @@
-import { Card } from "antd";
-import ReactMarkdown from "react-markdown";
+import { Card } from 'antd';
+import ReactMarkdown from 'react-markdown';
 
-export function RouterQueryDemo() {
+export default function RouterQueryDemo() {
   const routerAuthDemo = `
     ~~~js
     export const mainRoutes: RouteObject = {
@@ -33,9 +33,9 @@ export function RouterQueryDemo() {
   `;
 
   return (
-    <div css={{ "& > * + *": { marginTop: 12 } }}>
+    <div css={{ '& > * + *': { marginTop: 12 } }}>
       <Card title="npm包：react-router-toolkit" bordered={false}>
-        <a onClick={() => window.open("https://www.npmjs.com/package/react-router-toolkit")}>查看文档</a>
+        <a onClick={() => window.open('https://www.npmjs.com/package/react-router-toolkit')}>查看文档</a>
       </Card>
       <Card title="路由守卫" bordered={false}>
         <ReactMarkdown>{routerAuthDemo}</ReactMarkdown>
