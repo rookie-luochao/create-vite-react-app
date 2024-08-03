@@ -6,6 +6,7 @@ import { useLoginInfoStore } from '@/core/store';
 import { flexCenterOpts } from '@/core/style/utils';
 
 import { defaultLinkPath, defaultLoginInfo, defaultUserInfo } from './config';
+import './index.less';
 
 interface ILogin {
   username: string;
@@ -32,16 +33,11 @@ export default function Login() {
 
   return (
     <div
-      css={[
-        {
-          height: globalThis.document.documentElement.clientHeight,
-          backgroundImage:
-            'url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg)',
-          backgroundSize: '100% 100%',
-          backgroundRepeat: 'no-repeat',
-        },
-        flexCenterOpts(),
-      ]}
+      className="login"
+      style={{
+        ...flexCenterOpts(),
+        height: globalThis.document.documentElement.clientHeight,
+      }}
     >
       <Form
         form={form}
@@ -77,9 +73,7 @@ export default function Login() {
           <Form.Item noStyle name="remember" valuePropName="checked">
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
-          <a css={{ float: 'right' }} href="">
-            Forgot password
-          </a>
+          <a style={{ float: 'right' }}>Forgot password</a>
         </Form.Item>
         <Form.Item>
           <Button

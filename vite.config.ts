@@ -4,20 +4,19 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        presets: [['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }]],
-        plugins: ['@emotion/babel-plugin'],
-        babelrc: false,
-        configFile: false,
-      },
-    }),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
       '@request': resolve(__dirname, 'src/core/http/request.ts'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        modifyVars: {},
+      },
     },
   },
 });

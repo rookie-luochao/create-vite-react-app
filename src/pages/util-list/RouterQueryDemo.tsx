@@ -33,7 +33,7 @@ export default function RouterQueryDemo() {
   `;
 
   return (
-    <div css={{ '& > * + *': { marginTop: 12 } }}>
+    <div>
       <Card bordered={false} title="npm包：react-router-toolkit">
         <a
           onClick={() =>
@@ -43,7 +43,7 @@ export default function RouterQueryDemo() {
           查看文档
         </a>
       </Card>
-      <Card bordered={false} title="路由守卫">
+      <Card bordered={false} style={{ marginTop: 12 }} title="路由守卫">
         <ReactMarkdown>{routerAuthDemo}</ReactMarkdown>
       </Card>
     </div>

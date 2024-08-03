@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { fromEvent, throttleTime } from 'rxjs';
 
+import ToolBar from '@/components/ToolBar';
 import { dsc } from '@/core/style/defaultStyleConfig';
 
-import { Logo, MenuComp, ToolBar } from './MainLayoutComp';
+import { Logo, MenuComp } from './MainLayoutComp';
+import './index.less';
 
 export default function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
@@ -37,7 +39,7 @@ export default function MainLayout() {
       <Sider
         collapsible
         collapsed={collapsed}
-        css={{ height: menuHeight, overflow: 'scroll' }}
+        style={{ height: menuHeight, overflow: 'scroll' }}
         theme={'light'}
         width={240}
         onCollapse={setCollapsed}
@@ -45,15 +47,13 @@ export default function MainLayout() {
         <Logo inlineCollapsed={collapsed} />
         <MenuComp />
       </Sider>
-      <Layout className="site-layout" css={{ backgroundColor: dsc.color.bg }}>
+      <Layout className="site-layout" style={{ backgroundColor: dsc.color.bg }}>
         <ToolBar />
         <div
-          css={{
-            padding: 16,
+          className="main"
+          style={{
             backgroundColor: dsc.color.bgGray,
-            overflow: 'scroll',
             height: menuHeight - defaultMenuTitleHeight,
-            borderRadius: '10px 0 0',
           }}
         >
           <Outlet />

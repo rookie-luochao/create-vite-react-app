@@ -10,7 +10,7 @@ export default function Dashboard() {
     <div>
       this is dashboard
       <div>{obj.a.b}</div>
-      <div css={{ marginBottom: 12 }}>
+      <div style={{ marginBottom: 12 }}>
         <Button
           danger
           type="primary"

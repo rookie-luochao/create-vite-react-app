@@ -1,6 +1,8 @@
 import { Card } from 'antd';
 import ReactMarkdown from 'react-markdown';
 
+import './index.less';
+
 export default function RequestDemo() {
   const getRequestDemo = `
     ~~~js
@@ -90,7 +92,7 @@ export default function RequestDemo() {
   `;
 
   return (
-    <div css={{ '& > * + *': { marginTop: 12 } }}>
+    <div className="requestDemoWrap">
       <Card bordered={false} title="获取数据">
         <ReactMarkdown>{getRequestDemo}</ReactMarkdown>
       </Card>

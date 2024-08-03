@@ -1,4 +1,4 @@
-import { IconDown } from '@/pages/main/MainLayoutComp';
+import IconDown from '@/components/Icon/IconDown';
 
 export default function UIOne() {
   return <IconDown />;

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["@emotion/react/types/css-prop"],
     "paths": {
       "@/*": ["./src/*"],
       "@request": ["./src/core/http/request.ts"]
