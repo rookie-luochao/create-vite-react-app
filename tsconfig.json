@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["@emotion/react/types/css-prop", "node"],
+    "types": ["@emotion/react/types/css-prop"],
     "paths": {
       "@/*": ["./src/*"],
       "@request": ["./src/core/http/request.ts"]
@@ -25,14 +25,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Module Resolution Options */
-    // "baseUrl": ".",
-
     /* Source Map Options */
     "sourceMap": false
   },
-  // "include": ["src"],
-  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "ts-node": {
     "esm": true

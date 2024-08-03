@@ -25,10 +25,10 @@ lint:
 	npm run lint
 
 lintfix: 
-	npm run lintfix
+	npm run lint:fix
 
 prepare: 
 	npm run prepare
 
 openapi: 
-	npm run openapi
+	npm run openapi-ts
