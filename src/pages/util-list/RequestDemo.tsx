@@ -91,13 +91,13 @@ export default function RequestDemo() {
 
   return (
     <div css={{ '& > * + *': { marginTop: 12 } }}>
-      <Card title="获取数据" bordered={false}>
+      <Card bordered={false} title="获取数据">
         <ReactMarkdown>{getRequestDemo}</ReactMarkdown>
       </Card>
-      <Card title="更新数据" bordered={false}>
+      <Card bordered={false} title="更新数据">
         <ReactMarkdown>{postRequestDemo}</ReactMarkdown>
       </Card>
-      <Card title="接口联动" bordered={false}>
+      <Card bordered={false} title="接口联动">
         <ReactMarkdown>{requestDemo}</ReactMarkdown>
       </Card>
     </div>

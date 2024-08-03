@@ -34,10 +34,16 @@ export default function RouterQueryDemo() {
 
   return (
     <div css={{ '& > * + *': { marginTop: 12 } }}>
-      <Card title="npm包：react-router-toolkit" bordered={false}>
-        <a onClick={() => window.open('https://www.npmjs.com/package/react-router-toolkit')}>查看文档</a>
+      <Card bordered={false} title="npm包：react-router-toolkit">
+        <a
+          onClick={() =>
+            window.open('https://www.npmjs.com/package/react-router-toolkit')
+          }
+        >
+          查看文档
+        </a>
       </Card>
-      <Card title="路由守卫" bordered={false}>
+      <Card bordered={false} title="路由守卫">
         <ReactMarkdown>{routerAuthDemo}</ReactMarkdown>
       </Card>
     </div>

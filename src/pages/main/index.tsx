@@ -1,15 +1,18 @@
-import { dsc } from '@/core/style/defaultStyleConfig';
 import { Layout } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { fromEvent, throttleTime } from 'rxjs';
 
+import { dsc } from '@/core/style/defaultStyleConfig';
+
 import { Logo, MenuComp, ToolBar } from './MainLayoutComp';
 
 export default function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
-  const [menuHeight, setMenuHeight] = useState(document.documentElement.clientHeight);
+  const [menuHeight, setMenuHeight] = useState(
+    document.documentElement.clientHeight
+  );
   const defaultMenuTitleHeight = 64;
 
   useEffect(() => {
@@ -32,11 +35,11 @@ export default function MainLayout() {
   return (
     <Layout>
       <Sider
-        theme={'light'}
-        width={240}
-        css={{ height: menuHeight, overflow: 'scroll' }}
         collapsible
         collapsed={collapsed}
+        css={{ height: menuHeight, overflow: 'scroll' }}
+        theme={'light'}
+        width={240}
         onCollapse={setCollapsed}
       >
         <Logo inlineCollapsed={collapsed} />

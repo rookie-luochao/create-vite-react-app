@@ -6,18 +6,18 @@ export interface IConfig {
 }
 
 // 一级path, 例如：openapi
-export const urlPath = "";
+export const urlPath = '';
 
 // 项目基本变量配置
 const appConfig: IConfig = {
-  // 应用名称, 例如：webapp-react
-  appName: "",
+  // 应用名称, 例如：react-app
+  appName: '',
   // 网络请求的域名，例如：https://host
-  baseURL: "",
+  baseURL: '',
   // 发布版本，例如：0000000-0.0.1
-  version: "",
+  version: '',
   // 代码环境，例如：demo
-  env: "",
+  env: '',
 };
 
 export default appConfig;

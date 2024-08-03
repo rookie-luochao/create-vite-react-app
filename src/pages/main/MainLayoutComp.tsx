@@ -1,16 +1,26 @@
-import LogoIcon from '@/assets/images/logo.svg';
-import LogoMiniIcon from '@/assets/images/logo_mini.svg';
-import { useLoginInfoStore } from '@/core/store';
-import { dsc } from '@/core/style/defaultStyleConfig';
-import { flexCenterOpts } from '@/core/style/utils';
-import { dashboardModuleName, mainLayoutModuleName, uiListModuleName, utilListModuleName } from '@/router/config';
-import routes from '@/router/routes';
-import { BuildOutlined, DashboardOutlined, ToolOutlined } from '@ant-design/icons';
+import {
+  BuildOutlined,
+  DashboardOutlined,
+  ToolOutlined,
+} from '@ant-design/icons';
 import { Avatar, Dropdown, Menu } from 'antd';
 import { find } from 'lodash-es';
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Dictionary, parseQueryString } from 'react-router-toolkit';
+
+import LogoIcon from '@/assets/images/logo.svg';
+import LogoMiniIcon from '@/assets/images/logo_mini.svg';
+import { useLoginInfoStore } from '@/core/store';
+import { dsc } from '@/core/style/defaultStyleConfig';
+import { flexCenterOpts } from '@/core/style/utils';
+import {
+  dashboardModuleName,
+  mainLayoutModuleName,
+  uiListModuleName,
+  utilListModuleName,
+} from '@/router/config';
+import routes from '@/router/routes';
 
 import { getMenus } from './utils';
 
@@ -46,7 +56,10 @@ export function MenuComp() {
   }, [pathname]);
 
   const menuItems = useMemo(() => {
-    const mainRoutes = find(routes[0].children, (route) => route.path === mainLayoutModuleName);
+    const mainRoutes = find(
+      routes[0].children,
+      (route) => route.path === mainLayoutModuleName
+    );
     const moduleNameToIconMap = {
       [dashboardModuleName]: <DashboardOutlined />,
       [uiListModuleName]: <BuildOutlined />,
@@ -62,11 +75,11 @@ export function MenuComp() {
 
   return (
     <Menu
-      theme={'light'}
-      mode="inline"
-      selectedKeys={menuActivePath}
       defaultOpenKeys={[menuOpenKey]}
       items={menuItems}
+      mode="inline"
+      selectedKeys={menuActivePath}
+      theme={'light'}
       onSelect={({ key }) => {
         setMenuActivePath([key]);
       }}
@@ -85,7 +98,7 @@ export const Logo = ({ inlineCollapsed }: { inlineCollapsed?: boolean }) => {
         alignItems: 'center',
       }}
     >
-      <img src={inlineCollapsed ? LogoMiniIcon : LogoIcon} alt="logo" />
+      <img alt="logo" src={inlineCollapsed ? LogoMiniIcon : LogoIcon} />
     </div>
   );
 };
@@ -95,38 +108,82 @@ const UserName = () => {
 
   return (
     <div css={{ display: 'flex', alignItems: 'center' }}>
-      <Avatar shape="square" style={{ backgroundColor: dsc.color.primary, verticalAlign: 'middle', borderRadius: 4 }}>
+      <Avatar
+        shape="square"
+        style={{
+          backgroundColor: dsc.color.primary,
+          verticalAlign: 'middle',
+          borderRadius: 4,
+        }}
+      >
         {loginInfo?.name?.slice(0, 1)}
       </Avatar>
       {loginInfo ? (
-        <div css={{ color: dsc.color.text, fontSize: dsc.fontSize.s, padding: '0em 0.6em' }}>{loginInfo?.name}</div>
+        <div
+          css={{
+            color: dsc.color.text,
+            fontSize: dsc.fontSize.s,
+            padding: '0em 0.6em',
+          }}
+        >
+          {loginInfo?.name}
+        </div>
       ) : null}
     </div>
   );
 };
 
 export const IconDown = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" version="1.1" width="18" height="18" viewBox="0 0 18 18">
+  <svg
+    fill="none"
+    height="18"
+    version="1.1"
+    viewBox="0 0 18 18"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <defs>
       <filter
-        id="master_svg0_182_24814"
-        filterUnits="objectBoundingBox"
         colorInterpolationFilters="sRGB"
+        filterUnits="objectBoundingBox"
+        height="18"
+        id="master_svg0_182_24814"
+        width="18"
         x="0"
         y="0"
-        width="18"
-        height="18"
       >
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+        <feBlend
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          mode="normal"
+          result="shape"
+        />
         <feGaussianBlur in="BackgroundImage" stdDeviation="2" />
-        <feComposite in2="SourceAlpha" operator="in" result="effect1_foregroundBlur" />
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_foregroundBlur" result="shape" />
+        <feComposite
+          in2="SourceAlpha"
+          operator="in"
+          result="effect1_foregroundBlur"
+        />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_foregroundBlur"
+          mode="normal"
+          result="shape"
+        />
       </filter>
     </defs>
     <g>
       <g filter="url(#master_svg0_182_24814)">
-        <rect x="0" y="0" width="18" height="18" rx="4" fill="#EEF2F9" fillOpacity="0.8500000238418579" />
+        <rect
+          fill="#EEF2F9"
+          fillOpacity="0.8500000238418579"
+          height="18"
+          rx="4"
+          width="18"
+          x="0"
+          y="0"
+        />
       </g>
       <g transform="matrix(-1,0,0,-1,26,24)">
         <path
