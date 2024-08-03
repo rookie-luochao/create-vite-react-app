@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lintfix": "eslint . --ext ts,tsx --fix",
-    "prepare": "husky install",
+    "prepare": "husky",
     "openapi-ts": "openapi-ts"
   },
   "dependencies": {
