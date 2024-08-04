@@ -1,7 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
-import ErrorBoundaryWrapOutlet from '@/core/error-boundary';
 import { lazy } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
+
+import ShouldLogon from '@/core/auth/ShouldLogon';
+import ErrorBoundaryWrapOutlet from '@/core/error-boundary';
 
 import {
   dashboardModuleName,
@@ -16,7 +18,9 @@ const MainLayout = lazy(() => import('@/pages/main'));
 const Dashboard = lazy(() => import('@/pages/dashboard/index.tsx'));
 const UIOne = lazy(() => import('@/pages/ui-list/UIOne.tsx'));
 const RequestDemo = lazy(() => import('@/pages/util-list/RequestDemo.tsx'));
-const RouterQueryDemo = lazy(() => import('@/pages/util-list/RouterQueryDemo.tsx'));
+const RouterQueryDemo = lazy(
+  () => import('@/pages/util-list/RouterQueryDemo.tsx')
+);
 
 const routes: RouteObject[] = [
   {
@@ -34,7 +38,11 @@ const routes: RouteObject[] = [
       },
       {
         path: mainLayoutModuleName,
-        element: <MainLayout />,
+        element: (
+          <ShouldLogon>
+            <MainLayout />
+          </ShouldLogon>
+        ),
         children: [
           {
             path: dashboardModuleName,

@@ -1,13 +1,14 @@
-import { create } from "zustand";
-import { StorageValue, devtools, persist } from "zustand/middleware";
-import { logger } from "./loggerMiddleware";
+import { create } from 'zustand';
+import { StorageValue, devtools, persist } from 'zustand/middleware';
 
-interface ILoginInfo {
+import { logger } from './loggerMiddleware';
+
+export interface ILoginInfo {
   accessToken: string;
   refreshToken?: string;
   uid?: string;
   expireAt?: string;
-  expires_in?: number;
+  expiresIn?: number;
   name?: string;
 }
 
@@ -17,9 +18,14 @@ interface ILoginInfoState {
   clear: () => void;
 }
 
-export const loginInfoStorageKey = "login-info-storage";
-export const defaultLoginInfoStorage = { state: { loginInfo: null }, version: 0 };
-export type ILoginInfoStorageState = StorageValue<Pick<ILoginInfoState, "loginInfo">>;
+export const loginInfoStorageKey = 'login-info-storage';
+export const defaultLoginInfoStorage = {
+  state: { loginInfo: null },
+  version: 0,
+};
+export type ILoginInfoStorageState = StorageValue<
+  Pick<ILoginInfoState, 'loginInfo'>
+>;
 
 export const useLoginInfoStore = create<ILoginInfoState>()(
   logger(
@@ -27,15 +33,16 @@ export const useLoginInfoStore = create<ILoginInfoState>()(
       persist(
         (set) => ({
           loginInfo: null,
-          updateLoginInfo: (newLoginInfo) => set(() => ({ loginInfo: newLoginInfo })),
+          updateLoginInfo: (newLoginInfo) =>
+            set(() => ({ loginInfo: newLoginInfo })),
           clear: () => set(() => ({ loginInfo: null })),
         }),
         {
           name: loginInfoStorageKey,
-        },
-      ),
-    ),
-  ),
+        }
+      )
+    )
+  )
 );
 
 interface IProjectInfo {
@@ -49,7 +56,7 @@ interface IProjectInfoState {
   clear: () => void;
 }
 
-const projectInfoStorageKey = "project-info-storage";
+const projectInfoStorageKey = 'project-info-storage';
 
 export const useProjectInfoStore = create<IProjectInfoState>()(
   logger(
@@ -57,13 +64,14 @@ export const useProjectInfoStore = create<IProjectInfoState>()(
       persist(
         (set) => ({
           projectInfo: null,
-          updateProjectInfo: (newProjectInfo) => set(() => ({ projectInfo: newProjectInfo })),
+          updateProjectInfo: (newProjectInfo) =>
+            set(() => ({ projectInfo: newProjectInfo })),
           clear: () => set(() => ({ projectInfo: null })),
         }),
         {
           name: projectInfoStorageKey,
-        },
-      ),
-    ),
-  ),
+        }
+      )
+    )
+  )
 );
