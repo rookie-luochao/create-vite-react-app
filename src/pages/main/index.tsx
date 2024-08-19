@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { fromEvent, throttleTime } from 'rxjs';
 
+import LazyImportComponent from '@/components/LazyImportComponent';
 import ToolBar from '@/components/ToolBar';
 import { dsc } from '@/core/style/defaultStyleConfig';
 
@@ -40,7 +41,7 @@ export default function MainLayout() {
         collapsible
         collapsed={collapsed}
         style={{ height: menuHeight, overflow: 'scroll' }}
-        theme={'light'}
+        theme="light"
         width={240}
         onCollapse={setCollapsed}
       >
@@ -56,7 +57,9 @@ export default function MainLayout() {
             height: menuHeight - defaultMenuTitleHeight,
           }}
         >
-          <Outlet />
+          <LazyImportComponent>
+            <Outlet />
+          </LazyImportComponent>
         </div>
       </Layout>
     </Layout>
