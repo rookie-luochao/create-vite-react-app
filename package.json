@@ -30,7 +30,7 @@
     "react-router-dom": "^6.26.1",
     "react-router-toolkit": "^1.2.0",
     "rxjs": "^7.8.1",
-    "zustand": "^4.5.4"
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
