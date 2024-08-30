@@ -12,8 +12,8 @@ importers:
         specifier: ^5.4.0
         version: 5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query':
-        specifier: ^5.52.0
-        version: 5.52.0(react@18.3.1)
+        specifier: ^5.52.3
+        version: 5.52.3(react@18.3.1)
       ahooks:
         specifier: ^3.8.0
         version: 3.8.0(react@18.3.1)
@@ -726,13 +726,13 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tanstack/query-core@5.52.0':
-    resolution: {integrity: sha512-U1DOEgltjUwalN6uWYTewSnA14b+tE7lSylOiASKCAO61ENJeCq9VVD/TXHA6O5u9+6v5+UgGYBSccTKDoyMqw==}
+  '@tanstack/query-core@5.52.3':
+    resolution: {integrity: sha512-+Gh7lXn+eoAsarvvnndgqBeJ5lOjup8qgQnrTsFuhNTEAo0H934DxEPro4s3TlmvITfDTJ3UDCy7kY8Azm0qsA==}
 
-  '@tanstack/react-query@5.52.0':
-    resolution: {integrity: sha512-T8tLZdPEopSD3A1EBZ/sq7WkI76pKLKKiT82F486K8wf26EPgYCdeiSnJfuayssdQjWwLQMQVl/ROUBNmlWgCQ==}
+  '@tanstack/react-query@5.52.3':
+    resolution: {integrity: sha512-1K7l2hkqlWuh5SdaTYPSwMmHJF5dDk5INK+EtiEwUZW4+usWTXZx7QeHuk078oSzTzaVkEFyT3VquK7F0hYkUw==}
     peerDependencies:
-      react: ^18.0.0
+      react: ^18 || ^19
 
   '@trivago/prettier-plugin-sort-imports@4.3.0':
     resolution: {integrity: sha512-r3n0onD3BTOVUNPhR4lhVK4/pABGpbA7bW3eumZnYdKaHkf1qEC+Mag6DPbGNuuh0eG8AaYj+YqmVHSiGslaTQ==}
@@ -3912,11 +3912,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.20.0':
     optional: true
 
-  '@tanstack/query-core@5.52.0': {}
+  '@tanstack/query-core@5.52.3': {}
 
-  '@tanstack/react-query@5.52.0(react@18.3.1)':
+  '@tanstack/react-query@5.52.3(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.52.0
+      '@tanstack/query-core': 5.52.3
       react: 18.3.1
 
   '@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3)':
