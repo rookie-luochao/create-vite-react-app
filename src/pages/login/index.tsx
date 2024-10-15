@@ -6,7 +6,7 @@ import { useLoginInfoStore } from '@/core/store';
 import { flexCenterOpts } from '@/core/style/utils';
 
 import { defaultLinkPath, defaultLoginInfo, defaultUserInfo } from './config';
-import './index.less';
+import styles from './index.module.less';
 
 interface ILogin {
   username: string;
@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <div
-      className="login"
+      className={styles.login}
       style={{
         ...flexCenterOpts(),
         height: globalThis.document.documentElement.clientHeight,

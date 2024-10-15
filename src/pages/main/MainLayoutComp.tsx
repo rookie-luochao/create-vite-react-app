@@ -18,7 +18,7 @@ import {
 } from '@/router/config';
 import routes from '@/router/routes';
 
-import './index.less';
+import styles from './index.module.less';
 import { getMenus } from './utils';
 
 export const globalHiddenInMenuParentPath = 'globalHiddenInMenuParentPath';
@@ -86,7 +86,7 @@ export function MenuComp() {
 
 export const Logo = ({ inlineCollapsed }: { inlineCollapsed?: boolean }) => {
   return (
-    <div className="logo">
+    <div className={styles.logo}>
       <img alt="logo" src={inlineCollapsed ? LogoMiniIcon : LogoIcon} />
     </div>
   );

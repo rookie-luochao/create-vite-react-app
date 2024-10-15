@@ -9,7 +9,7 @@ import ToolBar from '@/components/ToolBar';
 import { dsc } from '@/core/style/defaultStyleConfig';
 
 import { Logo, MenuComp } from './MainLayoutComp';
-import './index.less';
+import styles from './index.module.less';
 
 export default function MainLayout() {
   const [collapsed, setCollapsed] = useState(false);
@@ -51,7 +51,7 @@ export default function MainLayout() {
       <Layout className="site-layout" style={{ backgroundColor: dsc.color.bg }}>
         <ToolBar />
         <div
-          className="main"
+          className={styles.main}
           style={{
             backgroundColor: dsc.color.bgGray,
             height: menuHeight - defaultMenuTitleHeight,

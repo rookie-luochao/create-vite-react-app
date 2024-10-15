@@ -18,5 +18,11 @@ export default defineConfig({
         modifyVars: {},
       },
     },
+    modules: {
+      // CSS Modules configuration
+      localsConvention: 'camelCase', // Optional: To access class names in camelCase
+      scopeBehaviour: 'local', // Default is 'local' for CSS Modules
+      generateScopedName: '[name]__[local]___[hash:base64:5]', // Scoped class names
+    },
   },
 });
