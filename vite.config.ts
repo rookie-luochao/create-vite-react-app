@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   resolve: {
     alias: {
@@ -25,4 +25,7 @@ export default defineConfig({
       generateScopedName: '[name]__[local]___[hash:base64:5]', // Scoped class names
     },
   },
-});
+  esbuild: {
+    drop: mode === 'development' ? [] : ['console', 'debugger'],
+  },
+}));
