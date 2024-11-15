@@ -15,7 +15,7 @@
     "openapi-ts": "openapi-ts"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.4.0",
+    "@ant-design/icons": "^5.5.1",
     "@tanstack/react-query": "^5.60.2",
     "ahooks": "^3.8.1",
     "antd": "^5.22.1",
