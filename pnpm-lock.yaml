@@ -27,8 +27,8 @@ importers:
         specifier: ^1.11.13
         version: 1.11.13
       less:
-        specifier: ^4.2.0
-        version: 4.2.0
+        specifier: ^4.3.0
+        version: 4.3.0
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -83,7 +83,7 @@ importers:
         version: 8.18.2(eslint@8.57.0)(typescript@5.6.2)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.3.4(vite@5.4.10(@types/node@22.1.0)(less@4.2.0))
+        version: 4.3.4(vite@5.4.10(@types/node@22.1.0)(less@4.3.0))
       csstype:
         specifier: ^3.1.3
         version: 3.1.3
@@ -125,7 +125,7 @@ importers:
         version: 5.6.2
       vite:
         specifier: ^5.4.10
-        version: 5.4.10(@types/node@22.1.0)(less@4.2.0)
+        version: 5.4.10(@types/node@22.1.0)(less@4.3.0)
 
 packages:
 
@@ -2198,9 +2198,9 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  less@4.2.0:
-    resolution: {integrity: sha512-P3b3HJDBtSzsXUl0im2L7gTO5Ubg8mEN6G8qoTS77iXxXX4Hvu4Qj540PZDvQ8V6DmX6iXo98k7Md0Cm1PrLaA==}
-    engines: {node: '>=6'}
+  less@4.3.0:
+    resolution: {integrity: sha512-X9RyH9fvemArzfdP8Pi3irr7lor2Ok4rOttDXBhlwDg+wKQsXOXgHWduAJE1EsF7JJx0w0bcO6BC6tCKKYnXKA==}
+    engines: {node: '>=14'}
     hasBin: true
 
   levn@0.4.1:
@@ -3412,6 +3412,9 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -4479,7 +4482,7 @@ snapshots:
       fast-glob: 3.3.2
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.6.3
+      semver: 7.7.1
       ts-api-utils: 1.3.0(typescript@5.6.2)
     optionalDependencies:
       typescript: 5.6.2
@@ -4525,14 +4528,14 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-react@4.3.4(vite@5.4.10(@types/node@22.1.0)(less@4.2.0))':
+  '@vitejs/plugin-react@4.3.4(vite@5.4.10(@types/node@22.1.0)(less@4.3.0))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.0)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.0)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.10(@types/node@22.1.0)(less@4.2.0)
+      vite: 5.4.10(@types/node@22.1.0)(less@4.3.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6105,11 +6108,11 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  less@4.2.0:
+  less@4.3.0:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.6.3
+      tslib: 2.8.1
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -7673,6 +7676,8 @@ snapshots:
 
   tslib@2.6.3: {}
 
+  tslib@2.8.1: {}
+
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
@@ -7825,7 +7830,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.10(@types/node@22.1.0)(less@4.2.0):
+  vite@5.4.10(@types/node@22.1.0)(less@4.3.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.47
@@ -7833,7 +7838,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.1.0
       fsevents: 2.3.3
-      less: 4.2.0
+      less: 4.3.0
 
   webidl-conversions@3.0.1: {}
 
